@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+    <arg name="output"        default="screen"/>
+
+    <node pkg="tf" type="static_transform_publisher" name="base_to_tfluna_l" args="0.08  0.21 -0.3 0 0 0 base_link tfluna_left 100"/>
+    <node pkg="tf" type="static_transform_publisher" name="base_to_tfluna_r" args="0.08 -0.21 -0.3 0 0 0 base_link tfluna_right 100"/>
+    
+    <node pkg="tfluna_ranger" type="tfluna_ranger_node" name="tfluna_ranger_node" output="$(arg output)" >
+    </node>
+
+</launch>
