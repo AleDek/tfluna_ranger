@@ -1,0 +1,3 @@
+tfluna:
+  serial_port: "/dev/ttyUSB0"
+  print_on: true

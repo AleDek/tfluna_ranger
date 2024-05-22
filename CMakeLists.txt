@@ -213,3 +213,6 @@ add_library( ndt_tfluna_lib src/TFLI2C.cpp)
 
 add_executable(tfluna_ranger_node src/tfluna_ranger_node.cpp )
 target_link_libraries(tfluna_ranger_node ndt_i2c_lib ndt_tfluna_lib ${catkin_LIBRARIES} )
+
+add_executable(tfluna_serial_node src/tfluna_serial_node.cpp )
+target_link_libraries(tfluna_serial_node ${catkin_LIBRARIES} )

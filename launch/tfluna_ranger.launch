@@ -5,8 +5,14 @@
 
     <node pkg="tf" type="static_transform_publisher" name="base_to_tfluna_l" args="0.08  0.21 -0.3 0 0 0 base_link tfluna_left 100"/>
     <node pkg="tf" type="static_transform_publisher" name="base_to_tfluna_r" args="0.08 -0.21 -0.3 0 0 0 base_link tfluna_right 100"/>
-    
-    <node pkg="tfluna_ranger" type="tfluna_ranger_node" name="tfluna_ranger_node" output="$(arg output)" >
+
+    <!-- i2c on UP2 -->
+    <!-- <node pkg="tfluna_ranger" type="tfluna_ranger_node" name="tfluna_ranger_node" output="$(arg output)" > 
+    </node> -->
+
+    <!-- serial from nucleo STML432kc -->
+    <rosparam command="load" file="$(find tfluna_ranger)/conf/tfluna_params.yaml" />
+    <node pkg="tfluna_ranger" type="tfluna_serial_node" name="tfluna_serial_node" output="$(arg output)" >
     </node>
 
 </launch>
